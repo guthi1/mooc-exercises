@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[49]:
 
 
 import numpy as np
@@ -46,8 +46,12 @@ def PIDController(
     e_der = (e_y - prev_e_y) / delta_t
     
     k_e = 10
-    k_i = 0
-    k_d = 100
+    k_i = 0.5
+    k_d = 2
+    
+    # k_e = 10
+    # k_i = 0.5
+    # k_d = 2
     
     omega = k_e * e_y + k_i * e_int + k_d * e_der
     # print(f"\ny_hat:{y_hat}")
