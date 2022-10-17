@@ -1,6 +1,6 @@
 baseline: 0.1045
-calibration_time: 2022-10-03-22-24-38
-gain: 0.75
+calibration_time: 2022-10-17-04-25-52
+gain: 1
 k: 27.0
 limit: 1.0
 omega_max: 8.0
