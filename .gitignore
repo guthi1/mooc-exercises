@@ -16,3 +16,4 @@ catkin_ws/.catkin_tools/
 *-filtered*
 object-detection/solution/duckietown_dataset/*
 object-detection/solution/nn_models/*
+
