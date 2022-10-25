@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[292]:
+# In[53]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -23,13 +23,13 @@ def get_steer_matrix_left_lane_markings(shape):
     
     steer_matrix_left_lane = np.zeros(shape)
     half = shape[1]//2
-    steer_matrix_left_lane[half:, half:half//2] = 1
+    steer_matrix_left_lane[:, :half] = -10
 
+    # steer_matrix_left_lane = np.ones(shape) * -10
 
     return steer_matrix_left_lane
 
-
-# In[291]:
+# In[61]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -48,12 +48,13 @@ def get_steer_matrix_right_lane_markings(shape):
     
     steer_matrix_right_lane = np.zeros(shape)
     half = shape[1]//2
-    steer_matrix_right_lane[half:, half//2:half] = 1
+    steer_matrix_right_lane[:, half:] = 6
+    
+    # steer_matrix_right_lane = np.ones(shape) * 10
     
     return steer_matrix_right_lane
 
-
-# In[256]:
+# In[24]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -131,8 +132,7 @@ def detect_lane_markings(image):
     mask_sobely_neg = (sobely < 0)
 
     # Let's combine these masks with the gradient magnitude mask
-    mask_left_edge = mask_ground * mask_left * mask_mag * mask_sobelx_neg * mask_sobely_neg
-    mask_right_edge = mask_ground * mask_right * mask_mag * mask_sobelx_pos * mask_sobely_neg
+    mask_left_edge =  mask_left * mask_mag * mask_sobelx_neg * mask_sobely_neg * mask_yellow
+    mask_right_edge =  mask_right * mask_mag * mask_sobelx_pos * mask_sobely_neg * mask_white
 
     return (mask_left_edge, mask_right_edge)
-
