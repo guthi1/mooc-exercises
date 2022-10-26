@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[39]:
+# In[61]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -23,7 +23,9 @@ def get_steer_matrix_left_lane_markings(shape):
     
     steer_matrix_left_lane = np.zeros(shape)
     half = shape[1]//2
-    steer_matrix_left_lane[:, :half] = -3
+    steer_matrix_left_lane[:, :half] = -0.3
+    steer_matrix_left_lane[:half//4+1, :half] = 0.1  
+    
     
 #     val = -10.0
 #     for i in range(shape[1] - half):
@@ -34,7 +36,8 @@ def get_steer_matrix_left_lane_markings(shape):
 
     return steer_matrix_left_lane
 
-# In[41]:
+
+# In[59]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -53,14 +56,15 @@ def get_steer_matrix_right_lane_markings(shape):
     
     steer_matrix_right_lane = np.zeros(shape)
     half = shape[1]//2
-    steer_matrix_right_lane[:, half:] = 1
-    
+    steer_matrix_right_lane[half//4+1:, half:] = 0.2
+    steer_matrix_right_lane[:half//4+1, half:] = 0.1
     # val = 4.0
     # for i in range(shape[1] - half):
     #     steer_matrix_right_lane[:, half + i] = val
     #     val += 0.05
         
     return steer_matrix_right_lane
+
 
 # In[33]:
 
@@ -144,3 +148,4 @@ def detect_lane_markings(image):
     mask_right_edge =  mask_right * mask_mag * mask_sobelx_pos * mask_sobely_neg * mask_white
 
     return (mask_left_edge, mask_right_edge)
+
