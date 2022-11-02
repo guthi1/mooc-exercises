@@ -6,7 +6,7 @@
 
 def DT_TOKEN():
     # todo change this to your duckietown token
-    dt_token = "dt1-3nT8KSoxVh4MdLnE1Bq2mTkhRpbR35G8mmbjExKF7zGm6g4-43dzqWFnWd8KBa1yev1g3UKnzVxZkkTbfYtfGWrfSxeihNZvYVNfNmnCBP28LeqDxL"
+    dt_token = "dt1-3nT8KSoxVh4Migd7N6Nsjy5q8BHtzjcsyz57DKmyDpra2Wp-43dzqWFnWd8KBa1yev1g3UKnzVxZkkTbfj8ef646qjC1sdUCLLvJDADTr2CFxshUaw"
     return dt_token
 
 def MODEL_NAME():
