@@ -1,12 +1,24 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+<<<<<<< HEAD
 # In[1]:
+=======
+# In[3]:
+>>>>>>> 24d4846 (Adding gitignore rules to not push nn_models and dataset)
 
 
 def DT_TOKEN():
     # todo change this to your duckietown token
+<<<<<<< HEAD
     dt_token = "dt1-3nT8KSoxVh4Migd7N6Nsjy5q8BHtzjcsyz57DKmyDpra2Wp-43dzqWFnWd8KBa1yev1g3UKnzVxZkkTbfj8ef646qjC1sdUCLLvJDADTr2CFxshUaw"
+=======
+<<<<<<< HEAD
+    dt_token = "dt1-3nT8KSoxVh4MdLnE1Bq2mTkhRpbR35G8mmbjExKF7zGm6g4-43dzqWFnWd8KBa1yev1g3UKnzVxZkkTbfYtfGWrfSxeihNZvYVNfNmnCBP28LeqDxL"
+=======
+    dt_token = "dt1-3nT8KSoxVh4Migd7N6Nsjy5q8BHtzjcsyz57DKmyDpra2Wp-43dzqWFnWd8KBa1yev1g3UKnzVxZkkTbfj8ef646qjC1sdUCLLvJDADTr2CFxshUaw"
+>>>>>>> 24d4846 (Adding gitignore rules to not push nn_models and dataset)
+>>>>>>> da0aeb9 (Completing rebase by removing yolo weights)
     return dt_token
 
 def MODEL_NAME():
@@ -14,6 +26,10 @@ def MODEL_NAME():
     # if you didn't change it, it should be "yolov5"
     return "yolov5"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 24d4846 (Adding gitignore rules to not push nn_models and dataset)
 # In[2]:
 
 
@@ -22,6 +38,10 @@ def NUMBER_FRAMES_SKIPPED():
     # (must be a positive integer)
     return 0
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 24d4846 (Adding gitignore rules to not push nn_models and dataset)
 # In[3]:
 
 
@@ -32,6 +52,10 @@ def filter_by_classes(clas):
     # In other words, returning False means that this prediction is ignored.
     return True
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 24d4846 (Adding gitignore rules to not push nn_models and dataset)
 # In[4]:
 
 
@@ -42,6 +66,10 @@ def filter_by_scores(scor):
     # (returning True for all of them might be the right thing to do!)
     return True
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 24d4846 (Adding gitignore rules to not push nn_models and dataset)
 # In[5]:
 
 

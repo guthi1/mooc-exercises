@@ -9,6 +9,10 @@ IMAGE_SIZE = 416
 # this is the percentage of data that will go into the training set (as opposed to the testing set)
 SPLIT_PERCENTAGE = 0.8
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 24d4846 (Adding gitignore rules to not push nn_models and dataset)
 # In[6]:
 
 
@@ -32,6 +36,10 @@ mapping = {
     for key, h in mapping.items()
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 24d4846 (Adding gitignore rules to not push nn_models and dataset)
 # In[10]:
 
 
@@ -39,6 +47,10 @@ def segmented_image_one_class(segmented_img, class_name):
     mask = np.all(segmented_img == mapping[class_name], axis=-1)
     return mask
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 24d4846 (Adding gitignore rules to not push nn_models and dataset)
 # In[12]:
 
 
@@ -61,6 +73,10 @@ def find_all_bboxes(mask):
 
     return boxes
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 24d4846 (Adding gitignore rules to not push nn_models and dataset)
 # In[15]:
 
 
