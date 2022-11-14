@@ -10,10 +10,10 @@ lane_filter_histogram_configuration:
   sigma_phi_0: 0.1
   delta_d: 0.02
   delta_phi: 0.1
-  d_max: 0.3
-  d_min: -0.15
-  phi_min: -1.5
-  phi_max: 1.5
+  d_max: 0.16   # Robot see to much the horizon: Cause problem with the turn
+  d_min: -0.11  # Reduce a little bit his field of view
+  phi_min: -0.9
+  phi_max: 0.9
   linewidth_white: 0.05
   linewidth_yellow: 0.025
   lanewidth: 0.23
