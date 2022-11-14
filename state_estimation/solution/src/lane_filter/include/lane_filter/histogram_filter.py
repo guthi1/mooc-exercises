@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[252]:
 
 
 # start by importing some things we will need
@@ -13,7 +13,7 @@ from scipy.stats import entropy, multivariate_normal
 from math import floor, sqrt
 
 
-# In[60]:
+# In[255]:
 
 
 # Now let's define the prior function. In this case we choose
@@ -27,7 +27,7 @@ def histogram_prior(belief, grid_spec, mean_0, cov_0):
     return belief
 
 
-# In[243]:
+# In[269]:
 
 
 # Now let's define the predict function
@@ -84,20 +84,11 @@ def histogram_predict(belief, dt, left_encoder_ticks, right_encoder_ticks, grid_
                         or phi_t[i, j] > grid_spec['phi_max']
                     ):
                         continue
-                        
+
                     grid_d = grid_spec['d'][:,0]
                     grid_phi = grid_spec['phi'][0,:]                                       
                     i_new = np.digitize(d_t[i, j], grid_d) - 1
                     j_new = np.digitize(phi_t[i, j], grid_phi) - 1
-                    
-#                     d_grid_delta = grid_spec['d_max'] - grid_spec['d_min']
-#                     p_grid_delta = grid_spec['phi_max'] - grid_spec['phi_min']
-
-#                     i_size = grid_spec["d"].shape[0]  
-#                     j_size = grid_spec['d'].shape[1]
-
-#                     i_new = int((i_size*(d_t[i,j] - grid_spec["d_min"]) / (d_grid_delta)) // 1) - 1
-#                     j_new = int((j_size*(phi_t[i,j] - grid_spec['phi_min']) / (p_grid_delta)) // 1) - 1
 
                     p_belief[i_new, j_new] += belief[i, j]
 
@@ -112,7 +103,7 @@ def histogram_predict(belief, dt, left_encoder_ticks, right_encoder_ticks, grid_
         return belief
 
 
-# In[244]:
+# In[270]:
 
 
 # We will start by doing a little bit of processing on the segments to remove anything that is behing the robot (why would it be behind?)
@@ -133,7 +124,7 @@ def prepare_segments(segments):
     return filtered_segments
 
 
-# In[245]:
+# In[271]:
 
 
 def generate_vote(segment, road_spec):
@@ -173,7 +164,7 @@ def generate_vote(segment, road_spec):
     return d_i, phi_i
 
 
-# In[246]:
+# In[272]:
 
 
 def generate_measurement_likelihood(segments, road_spec, grid_spec):
@@ -187,15 +178,6 @@ def generate_measurement_likelihood(segments, road_spec, grid_spec):
         # if the vote lands outside of the histogram discard it
         if d_i > grid_spec['d_max'] or d_i < grid_spec['d_min'] or phi_i < grid_spec['phi_min'] or phi_i > grid_spec['phi_max']:
             continue
-
-#         d_grid_delta = grid_spec['d_max'] - grid_spec['d_min']
-#         p_grid_delta = grid_spec['phi_max'] - grid_spec['phi_min']
-        
-#         i_size = grid_spec["d"].shape[0]  
-#         j_size = grid_spec['d'].shape[1]
-        
-#         i = int((i_size*(d_i - grid_spec["d_min"]) / (d_grid_delta)) // 1) - 1
-#         j = int((j_size*(phi_i - grid_spec['phi_min']) / (p_grid_delta)) // 1) - 1
         
         grid_d = grid_spec['d'][:,0]
         grid_phi = grid_spec['phi'][0,:]                                       
@@ -211,7 +193,7 @@ def generate_measurement_likelihood(segments, road_spec, grid_spec):
     return measurement_likelihood
 
 
-# In[247]:
+# In[273]:
 
 
 def histogram_update(belief, segments, road_spec, grid_spec):
