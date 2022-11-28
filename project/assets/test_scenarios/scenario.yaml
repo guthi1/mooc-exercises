@@ -1,7 +1,7 @@
 payload_yaml: |
-   initial_pose:
-       y: 0.2
-       theta_deg: 0.0
+  initial_pose:
+      y: 0.2
+      theta_deg: 0.0
 robots:
   ego0:
     color: blue
@@ -18,7 +18,8 @@ robots:
         y: 0.0
         theta_deg: 0.0
 duckies: {}
-environment: "tiles:\n- - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n\
+environment:
+  "tiles:\n- - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n\
   \  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n \
   \ - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  -\
   \ grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n\
@@ -396,5 +397,5 @@ environment: "tiles:\n- - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  -
   \   height: 0.1919532554799203\n"
 
 player_robots:
-- ego0
+  - ego0
 scenario_name: LF-full-loop-000
