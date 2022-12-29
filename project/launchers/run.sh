@@ -11,8 +11,8 @@ source /code/solution/devel/setup.bash --extend
 set -eux
 
 dt-exec-BG roslaunch --wait agent agent_node.launch
-dt-exec-BG roslaunch --wait car_interface all.launch veh:=$VEHICLE_NAME
+# dt-exec-BG roslaunch --wait car_interface all.launch veh:=$VEHICLE_NAME
 
-dt-exec-FG roslaunch --wait duckietown_demos lane_following.launch || true
+dt-exec-FG roslaunch --wait object_detection object_detector_node.launch veh:=$VEHICLE_NAME || true
 
 copy-ros-logs
